@@ -1,0 +1,1 @@
+<script type="module" src="http://www.localhost/carnrentalsystem/public/build/assets/app-d4b42df8.js"></script>  
