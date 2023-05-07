@@ -67,7 +67,7 @@ class LoginController extends Controller
                     setcookie('login_username', $request->username, time()+60*60*24*100);
                     setcookie('login_password', $request->password, time()+60*60*24*100);
                 }
-                return redirect()->route('home');
+                return redirect()->route('user.dashboard');
             }
         }else{
             return redirect()->route('login')

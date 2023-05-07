@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Frontend\WelcomeController;
+use App\Http\Controllers\Userpanel\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,6 @@ Route::middleware(['auth'])->group(function(){
     /**
     * User Dashboard
     */
-     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+     Route::get('user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
     //  Route::get('user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard.index');
 });
