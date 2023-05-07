@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function(){
         * Admin Dashboard
         */
 
-        Route::get('admin/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('home');
         // Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
