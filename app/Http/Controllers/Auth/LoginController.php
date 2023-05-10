@@ -44,7 +44,7 @@ class LoginController extends Controller
         $input = $request->all();
 
         $this->validate($request, [
-            'username' => 'required',
+            'username' => 'required|max:255',
             'password' => 'required',
         ]);
 
@@ -70,8 +70,12 @@ class LoginController extends Controller
                 return redirect()->route('user.dashboard');
             }
         }else{
-            return redirect()->route('login')
-                ->with('error','User Name And Password Are Wrong.');
+
+            $notification = array(
+                'Message' => 'Invalid Username or Password!',
+                'alert-type' => 'warning'
+            );
+            return redirect()->route('login')->with($notification);
         }
 
     }
