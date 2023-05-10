@@ -58,7 +58,11 @@ class LoginController extends Controller
                     setcookie('login_username', $request->username, time()+60*60*24*100);
                     setcookie('login_password', $request->password, time()+60*60*24*100);
                 }
-                return redirect()->route('admin.home');
+                $notification = array(
+                    'Message' => 'Welcome Back!',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('admin.home')->with($notification);
             }else{
                 if($request->remember_me === null){
                     setcookie('login_username', $request->username,100);
@@ -67,7 +71,11 @@ class LoginController extends Controller
                     setcookie('login_username', $request->username, time()+60*60*24*100);
                     setcookie('login_password', $request->password, time()+60*60*24*100);
                 }
-                return redirect()->route('user.dashboard');
+                $notification = array(
+                    'Message' => 'Welcome Back!',
+                    'alert-type' => 'success'
+                );
+                return redirect()->route('user.dashboard')->with($notification);
             }
         }else{
 

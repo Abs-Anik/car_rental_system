@@ -19,3 +19,28 @@
  <script src="{{asset('public/userpanel/assets/js/dashboard.js')}}"></script>
  <script src="{{asset('public/userpanel/assets/js/Chart.roundedBarCharts.js')}}"></script>
  <!-- End custom js for this page-->
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+  @if (Session::has('Message'))
+      var type = "{{ Session::get('alert-type', 'info') }}";
+      switch(type){
+      case 'info':
+      toastr.info("{{ Session::get('Message') }}");
+      break;
+
+      case 'warning':
+      toastr.warning("{{ Session::get('Message') }}");
+      break;
+
+      case 'success':
+      toastr.success("{{ Session::get('Message') }}");
+      break;
+
+      case 'error':
+      toastr.error("{{ Session::get('Message') }}");
+      break;
+      }
+  @endif
+</script>

@@ -18,3 +18,5 @@
   <link rel="stylesheet" href="{{asset('public/adminpanel/assets/plugins/daterangepicker/daterangepicker.css')}}">
   <!-- summernote -->
   <link rel="stylesheet" href="{{asset('public/adminpanel/assets/plugins/summernote/summernote-bs4.min.css')}}">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

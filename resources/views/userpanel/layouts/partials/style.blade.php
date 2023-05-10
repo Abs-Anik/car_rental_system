@@ -12,3 +12,4 @@
   <link rel="stylesheet" href="{{asset('public/userpanel/assets/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('public/userpanel/assets/images/favicon.png')}}" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

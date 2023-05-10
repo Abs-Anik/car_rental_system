@@ -32,3 +32,28 @@
 <script src="{{asset('public/adminpanel/assets/dist/js/demo.js')}}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{asset('public/adminpanel/assets/dist/js/pages/dashboard.js')}}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+  @if (Session::has('Message'))
+      var type = "{{ Session::get('alert-type', 'info') }}";
+      switch(type){
+      case 'info':
+      toastr.info("{{ Session::get('Message') }}");
+      break;
+
+      case 'warning':
+      toastr.warning("{{ Session::get('Message') }}");
+      break;
+
+      case 'success':
+      toastr.success("{{ Session::get('Message') }}");
+      break;
+
+      case 'error':
+      toastr.error("{{ Session::get('Message') }}");
+      break;
+      }
+  @endif
+</script>
