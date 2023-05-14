@@ -62,7 +62,7 @@ class LoginController extends Controller
                     'Message' => 'Welcome Back!',
                     'alert-type' => 'success'
                 );
-                return redirect()->route('admin.home')->with($notification);
+                return redirect()->route('admin.dashboard')->with($notification);
             }else{
                 if($request->remember_me === null){
                     setcookie('login_username', $request->username,100);

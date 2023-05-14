@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Adminpanel\DashboardController;
 use App\Http\Controllers\Frontend\WelcomeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Userpanel\UserDashboardController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,24 +24,32 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function(){
 
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-    Route::group(['prefix'=> 'admin','as'=>'admin.'], function(){
+    Route::group(['middleware' => ['is_admin']], function () {
+        
+        Route::group(['prefix'=> 'admin','as'=>'admin.'], function(){
 
-        /**
-        * Admin Dashboard
-        */
-
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('home');
-        // Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
-
-
+            /**
+            * Admin Dashboard
+            */
+    
+            // Route::get('/home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('home');
+            Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    
+    
+    
+        });
 
     });
 
+
+    Route::group(['middleware' => ['is_user']], function () {
     /**
     * User Dashboard
     */
      Route::get('user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
-    //  Route::get('user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard.index');
+     //  Route::get('user/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard.index');
+
+    });
 });

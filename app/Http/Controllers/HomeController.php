@@ -23,16 +23,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return redirect()->route('welcome');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function adminHome()
-    {
-        return view('adminpanel.pages.dashboard.index');
-    }
+    // /**
+    //  * Show the application dashboard.
+    //  *
+    //  * @return \Illuminate\Contracts\Support\Renderable
+    //  */
+    // public function adminHome()
+    // {
+    //     return view('adminpanel.pages.dashboard.index');
+    // }
 }
