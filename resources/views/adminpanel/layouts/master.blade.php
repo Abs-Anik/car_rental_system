@@ -7,6 +7,13 @@
     @yield('title')
   </title>
   @include('adminpanel.layouts.partials.style')
+  <style>
+    .select2-container--default .select2-selection--single {
+        border-radius: 0.25rem !important;
+        box-shadow: inset 0 0 0 transparent;
+    }
+  </style>
+  @yield('extra_css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -37,5 +44,6 @@
 <!-- ./wrapper -->
 
 @include('adminpanel.layouts.partials.script')
+@yield('extra_js')
 </body>
 </html>

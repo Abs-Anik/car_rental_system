@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Adminpanel\DashboardController;
+use App\Http\Controllers\Adminpanel\RoleController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Userpanel\UserDashboardController;
@@ -26,6 +27,8 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    // Admin Panel
+
     Route::group(['middleware' => ['is_admin']], function () {
         
         Route::group(['prefix'=> 'admin','as'=>'admin.'], function(){
@@ -34,9 +37,17 @@ Route::middleware(['auth'])->group(function(){
             * Admin Dashboard
             */
             Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+            /**
+             * Role & Permission
+             */
+            Route::resource('rolePermission',RoleController::class);
         });
 
     });
+
+
+    // User Panel
 
 
     Route::group(['middleware' => ['is_user']], function () {
