@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class CreateUsersSeeder extends Seeder
 {
@@ -15,27 +16,29 @@ class CreateUsersSeeder extends Seeder
      */
     public function run()
     {
-        $user = [
-            [
-               'first_name'=>'Mr.',
-               'last_name'=>' Admin',
-               'username'=>'Super Admin',
-               'email'=>'superadmin@gmail.com',
-                'is_admin'=>'1',
-               'password'=> bcrypt('123456'),
-            ],
-            [
-               'first_name'=>'Mr. ',
-               'last_name'=>'Anik',
-               'username'=>'anik',
-               'email'=>'anik@gmail.com',
-                'is_admin'=>'0',
-               'password'=> bcrypt('123456'),
-            ],
-        ];
-  
-        foreach ($user as $key => $value) {
-            User::create($value);
-        }
+
+        $admin = new User();
+        $admin->first_name = "Mr.";
+        $admin->last_name = "Admin";
+        $admin->username = "Super Admin";
+        $admin->email = "superadmin@gmail.com";
+        $admin->phone = "017XXXXXXXX";
+        $admin->image = "image.jpg";
+        $admin->is_admin = 1;
+        $admin->password = Hash::make('123456');
+        $admin->save();
+        $admin->assignRole('Super Admin');
+
+        $admin = new User();
+        $admin->first_name = "Mr.";
+        $admin->last_name = "Anik";
+        $admin->username = "anik";
+        $admin->email = "anik@gmail.com";
+        $admin->phone = "017XXXXXXXX";
+        $admin->image = "image.jpg";
+        $admin->is_admin = 0;
+        $admin->password = Hash::make('123456');
+        $admin->save();
+        $admin->assignRole('Editor');
     }
 }
