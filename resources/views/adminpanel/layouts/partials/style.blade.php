@@ -21,3 +21,4 @@
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   <link rel="stylesheet" href="{{ asset('public/adminpanel/assets/select/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{ asset('public/adminpanel/assets/custom/style.css')}}">

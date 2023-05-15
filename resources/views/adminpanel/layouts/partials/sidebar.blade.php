@@ -8,7 +8,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
-      <img src="{{asset('public/adminpanel/assets/dist/img/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{asset('public/adminpanel/assets/dist/img/logo-1.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">hireCAR!</span>
     </a>
 
@@ -40,14 +40,14 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('admin.rolePermission.create') }}" class="nav-link {{ $route == 'admin.rolePermission.create' ? 'active' : '' }}">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-angle-right left nav-icon"></i>
                 <p>Assign Role Permission</p>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="{{ route('admin.rolePermission.index') }}" class="nav-link {{ $route == 'admin.rolePermission.index' ? 'active' : '' }}">
-                <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-angle-right left nav-icon"></i>
                 <p>Role Permission List</p>
                 </a>
             </li>
