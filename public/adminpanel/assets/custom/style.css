@@ -30,3 +30,16 @@
     background-color: #3f7666!important;
     color: #fff;
 }
+
+.navbar-white {
+    background-color: #133352!important;
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(245, 239, 239, 0.5);
+}
+
+.icon-color-customize{
+    color: #133352;
+}
