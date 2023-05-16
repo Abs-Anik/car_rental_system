@@ -47,3 +47,15 @@
 .customize-color{
     color: #133352;
 }
+
+.profile-text{
+    font-size: 14px;
+}
+
+.img-size-50{
+    width: 35px !important;
+}
+
+.nav-custom-img{
+    margin: -5px!important;
+}

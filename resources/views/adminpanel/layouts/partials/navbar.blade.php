@@ -99,27 +99,19 @@
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown nav-custom-img">
         <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-user"></i>
+          {{-- <i class="far fa-user"></i> --}}
+          @if (!empty(Auth::user()->image))
+          <img src="{{asset('public/adminpanel/assets/profile/'.Auth::user()->image)}}" alt="User Avatar" class="img-size-50 img-circle">
+          @else
+          <img src="{{asset('public/adminpanel/assets/profile/avatar.png')}}" alt="Avatar" class="img-size-50 img-circle">
+          @endif
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Admin Profile</span>
+          <span class="dropdown-item dropdown-header">{{Auth::user()->first_name}}&nbsp;{{Auth::user()->last_name}}</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
+          <a href="{{route('admin.profile.view')}}" class="dropdown-item text-center profile-text">Profile Setting</a>
           <div class="dropdown-divider"></div>
           {{-- <a href="{{ route('logout') }}" class="dropdown-item dropdown-footer">Logout</a> --}}
           <a class="dropdown-item dropdown-footer" href="{{ route('logout') }}"

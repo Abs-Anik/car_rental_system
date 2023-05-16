@@ -38,6 +38,11 @@
 <script src="{{asset('public/adminpanel/assets/select/js/select2.min.js')}}"></script>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('public/adminpanel/assets/dropify/js/dropify.min.js') }}"></script>
+
+<script>
+  $(".dropify").dropify();
+</script>
 
 <script>
   $(".roles_select").select2({

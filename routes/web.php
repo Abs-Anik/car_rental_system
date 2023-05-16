@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Adminpanel\AdminProfileController;
 use App\Http\Controllers\Adminpanel\AdminRegistrationController;
 use App\Http\Controllers\Adminpanel\DashboardController;
 use App\Http\Controllers\Adminpanel\RoleController;
@@ -48,6 +49,17 @@ Route::middleware(['auth'])->group(function(){
              * Admin Registration
              */
             Route::resource('registration',AdminRegistrationController::class);
+
+            /**
+             * Admin Profile
+             */
+
+             Route::get('/profile', [AdminProfileController::class, 'show'])->name('profile.view');
+             Route::get('/profile/edit', [AdminProfileController::class, 'edit'])->name('profile.edit');
+             Route::post('/profile/update/{id}', [AdminProfileController::class, 'update'])->name('profile.update');
+     
+             Route::get('/password/change',[AdminProfileController::class, 'userPasswordChangeView'])->name('password.change');
+             Route::post('/password/change',[AdminProfileController::class, 'userPasswordChangeUpdate'])->name('password.update');
         });
 
     });
