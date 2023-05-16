@@ -10,7 +10,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0 text-secondary">Hire Car Dashboard</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -30,7 +30,7 @@
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-info-custom">
               <div class="inner">
                 <h3>150</h3>
 
@@ -45,7 +45,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-success-custom">
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
@@ -60,7 +60,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-warning-custom">
               <div class="inner">
                 <h3>44</h3>
 
@@ -75,7 +75,7 @@
           <!-- ./col -->
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-danger-custom">
               <div class="inner">
                 <h3>65</h3>
 
@@ -93,7 +93,7 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
+          {{-- <section class="col-lg-7 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
               <div class="card-header">
@@ -459,10 +459,10 @@
               </div>
             </div>
             <!-- /.card -->
-          </section>
+          </section> --}}
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
+          {{-- <section class="col-lg-5 connectedSortable">
 
             <!-- Map card -->
             <div class="card bg-gradient-primary">
@@ -599,7 +599,7 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </section>
+          </section> --}}
           <!-- right col -->
         </div>
         <!-- /.row (main row) -->
