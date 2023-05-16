@@ -29,8 +29,8 @@
               </p>
             </a>
           </li>
-          <li class="nav-item {{(($route == 'admin.rolePermission.create') ? "menu-open" :(($route == 'admin.rolePermission.index') ? "menu-open" : ""))}}">
-            <a href="#" class="nav-link {{(($route == 'admin.rolePermission.create') ? "active" :(($route == 'admin.rolePermission.index') ? "active" : ""))}}">
+          <li class="nav-item {{(($route == 'admin.registration.create') ? "menu-open" :(($route == 'admin.registration.index') ? "menu-open" :(($route == 'admin.rolePermission.create') ? "menu-open" :(($route == 'admin.rolePermission.index') ? "menu-open" : ""))))}}">
+            <a href="#" class="nav-link {{(($route == 'admin.registration.create') ? "active" :(($route == 'admin.registration.index') ? "active" :(($route == 'admin.rolePermission.create') ? "active" :(($route == 'admin.rolePermission.index') ? "active" : ""))))}}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 User Management
@@ -38,6 +38,19 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="{{ route('admin.registration.create') }}" class="nav-link {{ $route == 'admin.registration.create' ? 'active' : '' }}">
+                  <i class="fas fa-angle-right left nav-icon"></i>
+                  <p>Admin Registration</p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('admin.registration.index') }}" class="nav-link {{ $route == 'admin.registration.index' ? 'active' : '' }}">
+                <i class="fas fa-angle-right left nav-icon"></i>
+                <p>Admin List</p>
+                </a>
+            </li>
               <li class="nav-item">
                 <a href="{{ route('admin.rolePermission.create') }}" class="nav-link {{ $route == 'admin.rolePermission.create' ? 'active' : '' }}">
                 <i class="fas fa-angle-right left nav-icon"></i>

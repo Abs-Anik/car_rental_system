@@ -13,12 +13,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Role & Permission Create</h1>
+            <h1 class="m-0 text-secondary">Role & Permission</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Create Role & Permission</li>
+              <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="fa fa-home icon-color-customize"></i></a></li>
+              <li class="breadcrumb-item">Role & Permission</li>
+              <li class="breadcrumb-item active">Create</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -34,8 +35,8 @@
             <!-- Left col -->
             <div class="col-md-12">
                 <div class="card pd-20 pd-sm-40">
-                    <div class="d-sm-flex justify-content-between align-items-center mb-3">
-                        <h4 class="header-title mb-0 p-4">Create New Role</h4>
+                    <div class="d-sm-flex justify-content-between align-items-center mb-1">
+                        <h4 class="header-title mb-0 pl-3 pt-3">ROLE</h4>
                     </div>
                     <form action="{{ route('admin.rolePermission.store') }}" method="POST" enctype="multipart/form-data" data-parsley-validate data-parsley-focus="first">
                         @csrf

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Adminpanel\AdminRegistrationController;
 use App\Http\Controllers\Adminpanel\DashboardController;
 use App\Http\Controllers\Adminpanel\RoleController;
 use App\Http\Controllers\Frontend\WelcomeController;
@@ -42,6 +43,11 @@ Route::middleware(['auth'])->group(function(){
              * Role & Permission
              */
             Route::resource('rolePermission',RoleController::class);
+
+            /**
+             * Admin Registration
+             */
+            Route::resource('registration',AdminRegistrationController::class);
         });
 
     });

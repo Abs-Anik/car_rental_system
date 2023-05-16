@@ -13,12 +13,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Role & Permission Show</h1>
+            <h1 class="m-0 text-secondary">Role & Permission</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-              <li class="breadcrumb-item active">Show Role & Permission</li>
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}"><i class="fa fa-home icon-color-customize"></i></a></li>
+                <li class="breadcrumb-item">Role & Permission</li>
+                <li class="breadcrumb-item active">View</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -35,7 +36,7 @@
             <div class="col-md-12">
                 <div class="card pd-20 pd-sm-40">
                     <div class="d-sm-flex justify-content-between align-items-center mb-3">
-                        <h2 class="header-title mb-0 p-4">View Role</h2>
+                        <h2 class="header-title mb-0 pl-3 pt-3">ROLE</h2>
                     </div>
                     <div class="form-body">
                         <div class="card-body">
