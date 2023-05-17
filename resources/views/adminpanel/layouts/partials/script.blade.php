@@ -40,6 +40,16 @@
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="{{ asset('public/adminpanel/assets/dropify/js/dropify.min.js') }}"></script>
 
+<script src="{{asset('public/adminpanel/assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
+<script>
+  $(document).ready(function() {
+      $('.summernote').summernote({
+          height: 100
+      });
+  });
+</script>
+
 <script>
   $(".dropify").dropify();
 </script>

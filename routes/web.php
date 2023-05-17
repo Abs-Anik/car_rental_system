@@ -4,6 +4,7 @@ use App\Http\Controllers\Adminpanel\AdminProfileController;
 use App\Http\Controllers\Adminpanel\AdminRegistrationController;
 use App\Http\Controllers\Adminpanel\DashboardController;
 use App\Http\Controllers\Adminpanel\RoleController;
+use App\Http\Controllers\Adminpanel\SettingController;
 use App\Http\Controllers\Frontend\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Userpanel\UserDashboardController;
@@ -60,6 +61,16 @@ Route::middleware(['auth'])->group(function(){
      
              Route::get('/password/change',[AdminProfileController::class, 'userPasswordChangeView'])->name('password.change');
              Route::post('/password/change',[AdminProfileController::class, 'userPasswordChangeUpdate'])->name('password.update');
+
+            /**
+             * Setting
+             */
+
+             Route::get('/setting',[SettingController::class, 'index'])->name('setting.index');
+             Route::post('/setting',[SettingController::class, 'store'])->name('setting.store');
+             Route::post('/setting/{id}',[SettingController::class, 'update'])->name('setting.update');
+
+
         });
 
     });

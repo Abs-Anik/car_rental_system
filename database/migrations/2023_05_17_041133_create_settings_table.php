@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('strLocation');
             $table->string('strContact');
             $table->string('strEmail');
-            $table->string('strMap');
+            $table->text('strMap');
             $table->integer('experience');
             $table->timestamps();
         });

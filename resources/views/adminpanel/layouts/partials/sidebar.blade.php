@@ -66,6 +66,25 @@
             </li>
             </ul>
           </li>
+
+          <li class="nav-item {{(($route == 'admin.setting.index') ? "menu-open" :(($route == 'admin.setting.store') ? "menu-open" :(($route == 'admin.setting.update') ? "menu-open" :"")))}}">
+            <a href="#" class="nav-link {{(($route == 'admin.setting.index') ? "active" :(($route == 'admin.setting.store') ? "active" :(($route == 'admin.setting.update') ? "active" :"")))}}">
+              <i class="nav-icon fas fa-cog"></i>
+              <p>
+                Settings
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="{{ route('admin.setting.index') }}" class="nav-link {{(($route == 'admin.setting.index') ? "active" :(($route == 'admin.setting.store') ? "active" :(($route == 'admin.setting.update') ? "active" :"")))}}">
+                  <i class="fas fa-angle-right left nav-icon"></i>
+                  <p>Manage Website</p>
+                  </a>
+              </li>
+            </ul>
+          </li>
           {{-- <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>

@@ -16,12 +16,11 @@ class Setting extends Model
      */
     protected $fillable = [
         'title',
-        'sologan',
+        'slogan',
         'shortDescription',
-        'strLongDescription',
+        'longDescription',
         'strHomeBanner',
         'strVideo',
-        'experience',
         'strLink',
         'strFace',
         'strInsta',
@@ -30,6 +29,7 @@ class Setting extends Model
         'strContact',
         'strEmail',
         'strMap',
+        'experience',
     ];
 
 }
