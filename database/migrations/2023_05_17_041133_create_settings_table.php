@@ -20,12 +20,6 @@ return new class extends Migration
             $table->text('shortDescription');
             $table->text('longDescription');
             $table->string('strHomeBanner');
-            $table->string('strAboutBanner');
-            $table->string('strServiceBanner');
-            $table->string('strPricingBanner');
-            $table->string('strCarBanner');
-            $table->string('strBlogBanner');
-            $table->string('strContactBanner');
             $table->string('strVideo');
             $table->string('strLink');
             $table->string('strFace');
