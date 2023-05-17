@@ -81,7 +81,7 @@ class LoginController extends Controller
 
             $notification = array(
                 'Message' => 'Invalid Username or Password!',
-                'alert-type' => 'warning'
+                'alert-type' => 'error'
             );
             return redirect()->route('login')->with($notification);
         }

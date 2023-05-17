@@ -26,6 +26,7 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+  @include('auth.layouts.partials.script')
 </body>
 
 </html>
