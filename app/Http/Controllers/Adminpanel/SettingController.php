@@ -93,6 +93,67 @@ class SettingController extends Controller
 
     public function update(Request $request, $id)
     {
-        return 3;
+        $request->validate([
+            'title' => 'required|max:25',
+            'slogan' => 'required|max:255',
+            'shortDescription' => 'required|max:255',
+            'longDescription' => 'required',
+            'strHomeBanner' => 'nullable|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'strVideo' => 'nullable',
+            'experience' => 'required|numeric',
+            'strLink' => 'required',
+            'strFace' => 'required',
+            'strInsta' => 'required',
+            'strFooter' => 'required|max:255',
+            'strLocation' => 'required',
+            'strContact' => 'required',
+            'strEmail' => 'required|string|email|max:255',
+            'strMap' => 'required',
+
+        ]);
+
+        $setting = Setting::where('id', $id)->first();
+
+        try {
+            DB::beginTransaction();
+            $setting->title = $request->title;
+            $setting->slogan = $request->slogan;
+            $setting->shortDescription = $request->shortDescription;
+            $setting->longDescription = $request->longDescription;
+
+            if (!empty($request->strHomeBanner)) {
+                UploadHelper::deleteFile('public/adminpanel/assets/setting/'.$setting->strHomeBanner);
+                $setting->strHomeBanner = UploadHelper::upload('strHomeBanner', $request->strHomeBanner, $request->title . '-' . time() . '-image', 'public/adminpanel/assets/setting/',$setting->strHomeBanner);
+            }
+
+            if (!empty($request->strVideo)) {
+                UploadHelper::deleteFile('public/adminpanel/assets/setting/'.$setting->strVideo);
+                $setting->strVideo = UploadHelper::upload('strVideo', $request->strVideo, $request->title . '-' . time() . '-video', 'public/adminpanel/assets/setting/',$setting->strVideo);
+            }
+
+            $setting->experience = $request->experience;
+            $setting->strLink = $request->strLink;
+            $setting->strFace = $request->strFace;
+            $setting->strInsta = $request->strInsta;
+            $setting->strFooter = $request->strFooter;
+            $setting->strLocation = $request->strLocation;
+            $setting->strContact = $request->strContact;
+            $setting->strEmail = $request->strEmail;
+            $setting->strMap = $request->strMap;
+
+            $setting->update();
+            DB::commit();
+
+            $notification = array(
+            'Message' => 'Setting Updated Successfully!',
+            'alert-type' => 'success'
+            );
+            return redirect()->route('admin.setting.index')->with($notification);
+
+        } catch (\Exception $e) {
+                session()->flash('db_error', $e->getMessage());
+                DB::rollBack();
+                return back();
+        }
     }
 }
